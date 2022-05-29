@@ -16,7 +16,7 @@ const Header = () => {
                 Najważniejsze daty w rachunkowości
             </Typography>
             {!small && <ButtonLink href={'/kalendarz'} variant={'contained'}>
-                Zobacz daty
+                Zobacz kalendarz
             </ButtonLink>}
         </>
     )
