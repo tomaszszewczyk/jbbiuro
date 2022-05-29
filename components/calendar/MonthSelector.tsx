@@ -17,13 +17,13 @@ export const Selector = () => {
                justifyContent={'space-between'}
                pl={small ? '8px' : '64px'}
                pr={small ? '8px' : '64px'} >
-            <Button onClick={prev}>
+            <Button onClick={prev} aria-label={'Poprzedni miesiąc'}>
                 <ArrowBackIosNewIcon fontSize={'small'}/>
             </Button>
             <Typography>
                 {months[month] + ' ' + year}
             </Typography>
-            <Button onClick={next}>
+            <Button onClick={next} aria-label={'Następny miesiąc'}>
                 <ArrowForwardIosIcon fontSize={'small'}/>
             </Button>
         </Stack>

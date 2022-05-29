@@ -2,7 +2,7 @@ import {FC, useContext} from "react";
 import {Button, Stack, Typography, useMediaQuery} from "@mui/material";
 import {getDaysInMonth, importantDays} from "./logic";
 import {CalendarContext} from "./Calendar";
-import {Box, useTheme} from "@mui/system";
+import {useTheme} from "@mui/system";
 
 interface DayButtonProps {
     date: number
@@ -10,7 +10,6 @@ interface DayButtonProps {
 
 export const DayButton: FC<DayButtonProps> = ({date}) => {
     const theme = useTheme()
-    const small = useMediaQuery(theme.breakpoints.down('md'))
 
     const {year, month} = useContext(CalendarContext)
     const inMonth = date > 0 && date <= getDaysInMonth(year, month)
@@ -22,7 +21,7 @@ export const DayButton: FC<DayButtonProps> = ({date}) => {
             <Button size={'small'}
                     variant={enabled ? 'outlined' : 'text'}
                     disabled={!enabled}
-                    href={'#' + actual}
+                    href={'/kalendarz#' + actual}
                     sx={{
                         minWidth: 'unset !important',
                         width: '32px'

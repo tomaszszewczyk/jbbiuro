@@ -17,8 +17,8 @@ export const Navbar = () => {
                                    url={'/'}/>
                     </Box>
                     <Navigation links={[
-                        {href: '/aktualnosci', children: 'Aktualności'},
-                        {href: '/kalendarz', children: 'Kalendarz'},
+                        {href: '/aktualnosci', children: 'Aktualności', label: 'Przejdź do aktualności'},
+                        {href: '/kalendarz', children: 'Kalendarz', label: 'Przejdź do kalendarza'},
                         {href: '/kontakt', children: 'Kontakt', variant: 'contained'},
                     ]}/>
                 </Stack>

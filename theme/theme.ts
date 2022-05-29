@@ -112,6 +112,17 @@ export const theme = createTheme( {
                 contained: {
                     color: 'white',
                 }
+            },
+        },
+        MuiInputBase: {
+            styleOverrides: {
+                input: {
+                    ':focus': {
+                        outline: 'black solid 2px',
+                        outlineOffset: '6px',
+                        borderRadius: '2px',
+                    }
+                }
             }
         },
         MuiCard: {
