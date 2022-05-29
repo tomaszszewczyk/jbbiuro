@@ -3,7 +3,7 @@ import {Box} from "@mui/system";
 
 const Form = () => {
     return (
-        <Stack gap={'32px'} component={'form'}>
+        <Stack id='contact-form' gap={'32px'} component={'form'}>
             <FormControl>
                 <InputLabel htmlFor="name-input" id='name-input-label'>Nazwa firmy</InputLabel>
                 <Input id="name-input" aria-describedby="name-input-label"/>

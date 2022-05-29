@@ -50,7 +50,7 @@ export const Scope = () => {
                 <Grid container spacing={'64px'} pt={'64px'} justifyContent={'center'}>
                     <Grid item sm={12} md={6}>
                         <ScopeCard i={1}
-                                   title={'Pełne Ksiągi Handlowe'}
+                                   title={'Pełne Księgi Handlowe'}
                                    text={'Oferujemy obsługę Ksiąg Handlowych dla Spółek oraz innych podmiotów ' +
                                    'zobowiązanych do pełnej księgowości zgodnie z Ustawą o Rachunkowości.'}
                         />
