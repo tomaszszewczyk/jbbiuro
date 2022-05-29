@@ -38,7 +38,7 @@ export const CalendarSection = () => {
                             <Calendar/>
 
                             {small && <ButtonLink href={'/kalendarz'} variant={'contained'} label={'Zobacz kalendarz'}>
-                                Zobacz daty
+                                Zobacz kalendarz
                             </ButtonLink>}
                         </Stack>
                     </Grid>
