@@ -37,7 +37,7 @@ export const CalendarSection = () => {
                         <Stack direction={'column'} alignItems={'center'} spacing={'64px'}>
                             <Calendar/>
 
-                            {small && <ButtonLink href={'/kalendarz'} variant={'contained'} label={'Przejdź do kalendarza'}>
+                            {small && <ButtonLink href={'/kalendarz'} variant={'contained'} label={'Zobacz kalendarz'}>
                                 Zobacz daty
                             </ButtonLink>}
                         </Stack>

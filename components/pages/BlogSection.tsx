@@ -18,7 +18,7 @@ export const BlogSection: FC<BlogEntry> = ({content}) => {
 
                 <Stack gap={'32px'} pt={'32px'} alignItems={'center'}>
                     <BlogCard content={content}/>
-                    <ButtonLink href={'/aktualnosci'} variant={'contained'} label={'Przejdź do aktualności'}>
+                    <ButtonLink href={'/aktualnosci'} variant={'contained'} label={'Zobacz aktualności'}>
                         Zobacz aktualności
                     </ButtonLink>
                 </Stack>

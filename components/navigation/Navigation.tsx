@@ -15,7 +15,7 @@ const RegularMenu: FC<NavigationProps> = ({links}) => {
     return (
         <Stack component={'nav'} direction={'row'} gap={'64px'}>
             {links.map((l, i) => (
-                <ButtonLink key={i} href={l.href} variant={l.variant}>{l.children}</ButtonLink>
+                <ButtonLink key={i} href={l.href} variant={l.variant} label={l.label}>{l.children}</ButtonLink>
             ))}
         </Stack>
     )
@@ -58,7 +58,7 @@ const MobileMenu: FC<NavigationProps> = ({links}) => {
 
                     <Stack component={'nav'} direction={'column'} gap={'64px'} justifyContent={"center"}>
                         {links.map((l, i) => (
-                            <ButtonLink key={i} href={l.href} variant={l.variant}>{l.children}</ButtonLink>
+                            <ButtonLink key={i} href={l.href} variant={l.variant} label={l.label}>{l.children}</ButtonLink>
                         ))}
                     </Stack>
 
