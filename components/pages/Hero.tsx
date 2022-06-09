@@ -3,6 +3,7 @@ import {Box, useTheme} from "@mui/system";
 import Image from 'next/image.js'
 import heroPicture from '../../public/img/hero.svg'
 import {ButtonLink} from "../navigation/ButtonLink";
+import {useTranslation} from "next-i18next";
 
 const Slogan = () => {
     const theme = useTheme()
@@ -16,31 +17,33 @@ const Slogan = () => {
 }
 
 const Comment = () => {
+    const {t} = useTranslation()
+
     return (
         <Typography component={'p'} variant={'subtitle1'}>
-            Przedsiębiorca może podejmować wszelkie działania, z wyjątkiem tych, których zakazują przepisy
-            prawa. Przedsiębiorca może być obowiązany do określonego zachowania tylko na podstawie
-            przepisów prawa.
+            {t("Przedsiębiorca może podejmować wszelkie działania")}
         </Typography>
     )
 }
 
 const CTA = () => {
+    const {t} = useTranslation()
+
     return (
         <Box>
             <ButtonLink href={'/kontakt#contact-form'} variant={'contained'}>
-                {'Skontaktuj się z nami'}
+                {t('Skontaktuj się z nami')}
             </ButtonLink>
         </Box>
     )
 }
 
 const Picture = () => {
+    const {t} = useTranslation()
+
     return (
-        <Box flexShrink={0}
-             sx={{}}
-        >
-            <Image src={heroPicture} alt={'Stanowsko pracy księgowego'}/>
+        <Box flexShrink={0}>
+            <Image src={heroPicture} alt={t('Stanowsko pracy księgowego')}/>
         </Box>
     )
 }

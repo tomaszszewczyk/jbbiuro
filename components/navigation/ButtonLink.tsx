@@ -15,7 +15,8 @@ export const ButtonLink: FC<ButtonLinkProps> = (props) => {
 
     return (
         <Link href={href} passHref>
-            <Button aria-label={label} component={'a'} tabIndex={tabIndex} variant={variant}>{children}</Button>
+            <Button aria-label={label} component={'a'} tabIndex={tabIndex} variant={variant}
+                    sx={{':first-letter': {textTransform: "capitalize"}}}>{children}</Button>
         </Link>
     )
 }

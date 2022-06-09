@@ -2,21 +2,23 @@ import {Box, Container, Grid, Stack, Typography, useMediaQuery} from "@mui/mater
 import {Calendar} from "../calendar/Calendar";
 import {ButtonLink} from "../navigation/ButtonLink";
 import {useTheme} from "@mui/system";
+import {useTranslation} from "next-i18next";
 
 const Header = () => {
     const theme = useTheme()
     const small = useMediaQuery(theme.breakpoints.down('lg'))
+    const {t} = useTranslation()
 
     return (
         <>
             <Typography variant={'h2'}>
-                Kalendarz
+                {t("Kalendarz")}
             </Typography>
             <Typography component={'p'} variant={'subtitle1'} pb={'16px'}>
-                Najważniejsze daty w rachunkowości
+                {t("Najważniejsze daty w rachunkowości")}
             </Typography>
             {!small && <ButtonLink href={'/kalendarz'} variant={'contained'}>
-                Zobacz kalendarz
+                {t("Zobacz kalendarz")}
             </ButtonLink>}
         </>
     )
@@ -25,6 +27,7 @@ const Header = () => {
 export const CalendarSection = () => {
     const theme = useTheme()
     const small = useMediaQuery(theme.breakpoints.down('lg'))
+    const {t} = useTranslation()
 
     return (
         <Box mt={'100px'} pt={'50px'} pb={'50px'}>
@@ -37,8 +40,8 @@ export const CalendarSection = () => {
                         <Stack direction={'column'} alignItems={'center'} spacing={'64px'}>
                             <Calendar/>
 
-                            {small && <ButtonLink href={'/kalendarz'} variant={'contained'} label={'Zobacz kalendarz'}>
-                                Zobacz kalendarz
+                            {small && <ButtonLink href={'/kalendarz'} variant={'contained'} label={t('Zobacz kalendarz')}>
+                                {t("Zobacz kalendarz")}
                             </ButtonLink>}
                         </Stack>
                     </Grid>

@@ -1,16 +1,13 @@
 import {FC, useContext} from "react";
-import {Button, Stack, Typography, useMediaQuery} from "@mui/material";
+import {Button, Stack, Typography} from "@mui/material";
 import {getDaysInMonth, importantDays} from "./logic";
 import {CalendarContext} from "./Calendar";
-import {useTheme} from "@mui/system";
 
 interface DayButtonProps {
     date: number
 }
 
 export const DayButton: FC<DayButtonProps> = ({date}) => {
-    const theme = useTheme()
-
     const {year, month} = useContext(CalendarContext)
     const inMonth = date > 0 && date <= getDaysInMonth(year, month)
     const actual = new Date(year, month, date).getDate()
@@ -25,8 +22,7 @@ export const DayButton: FC<DayButtonProps> = ({date}) => {
                     sx={{
                         minWidth: 'unset !important',
                         width: '32px'
-                    }}
-            >
+                    }}>
                 <Typography sx={{color: inMonth ? 'black' : "#6C7470"}}>
                     {actual}
                 </Typography>

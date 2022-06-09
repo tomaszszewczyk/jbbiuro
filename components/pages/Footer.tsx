@@ -3,8 +3,11 @@ import {footerTheme, primaryColor} from "../../theme/theme";
 import {ThemeProvider} from "@mui/material/styles";
 import {ImageLink} from "../navigation/ImageLink";
 import logo from '../../public/img/logo_white.svg'
+import {useTranslation} from "next-i18next";
 
 const Contents = () => {
+    const {t} = useTranslation()
+
     return (
         <Stack gap={'64px'}>
             <Grid container columns={12} spacing={'32px'}>
@@ -27,7 +30,7 @@ const Contents = () => {
                     <Typography>0000664955</Typography>
                 </Grid>
                 <Grid item lg={2} md={3} sm={6}>
-                    <Typography component={'h3'} variant={'h5'}>Telefon</Typography>
+                    <Typography component={'h3'} variant={'h5'}>{t("Telefon")}</Typography>
                     <Typography>74/8577566</Typography>
                 </Grid>
             </Grid>
@@ -35,11 +38,11 @@ const Contents = () => {
             <Grid container justifyContent={'center'} spacing={'8px'}>
                 <Grid item>
                     <Typography sx={{textAlign: 'center'}}>
-                        Zaprojektowane i wdrożone przez
+                        {t("Zaprojektowane i wdrożone przez")}
                     </Typography>
                 </Grid>
                 <Grid item>
-                    <ImageLink label={'Przejdź na stronę bluesBrackets'} src={logo} alt={'Blues Brackets logo'}
+                    <ImageLink label={t('Przejdź na stronę bluesBrackets')} src={logo} alt={'Blues Brackets logo'}
                                url={'https://bluesbrackets.com'}/>
                 </Grid>
             </Grid>

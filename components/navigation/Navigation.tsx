@@ -6,14 +6,28 @@ import CloseIcon from '@mui/icons-material/Close';
 import {Box, useTheme} from "@mui/system";
 import {ImageLink} from "./ImageLink";
 import logo from "../../public/img/logo.png";
+import Link from "next/link";
+import {useTranslation} from "next-i18next";
+import {useRouter} from "next/router";
 
 interface NavigationProps {
     links: ButtonLinkProps[]
 }
 
 const RegularMenu: FC<NavigationProps> = ({links}) => {
+    const {locale} = useRouter()
+
     return (
         <Stack component={'nav'} direction={'row'} gap={'64px'}>
+            {locale === 'pl' && <Link locale={'en'} passHref href={'#'}>
+                <Button aria-label={'locale'} component={'a'} variant={'outlined'}
+                        sx={{textTransform: "capitalize"}}>English</Button>
+            </Link>}
+            {locale === 'en' && <Link locale={'pl'} passHref href={'#'}>
+                <Button aria-label={'locale'} component={'a'} variant={'outlined'}
+                        sx={{textTransform: "capitalize"}}>Polski</Button>
+            </Link>}
+
             {links.map((l, i) => (
                 <ButtonLink key={i} href={l.href} variant={l.variant} label={l.label}>{l.children}</ButtonLink>
             ))}
@@ -24,6 +38,7 @@ const RegularMenu: FC<NavigationProps> = ({links}) => {
 const MobileMenu: FC<NavigationProps> = ({links}) => {
     const [opened, setOpened] = useState(false)
     const theme = useTheme()
+    const {locale} = useRouter()
 
     return (
         <>
@@ -57,6 +72,15 @@ const MobileMenu: FC<NavigationProps> = ({links}) => {
                     </Stack>
 
                     <Stack component={'nav'} direction={'column'} gap={'64px'} justifyContent={"center"}>
+                        {locale === 'pl' && <Link locale={'en'} passHref href={'#'}>
+                            <Button aria-label={'locale'} component={'a'} variant={'outlined'}
+                                    sx={{textTransform: "capitalize"}}>English</Button>
+                        </Link>}
+                        {locale === 'en' && <Link locale={'pl'} passHref href={'#'}>
+                            <Button aria-label={'locale'} component={'a'} variant={'outlined'}
+                                    sx={{textTransform: "capitalize"}}>Polski</Button>
+                        </Link>}
+
                         {links.map((l, i) => (
                             <ButtonLink key={i} href={l.href} variant={l.variant} label={l.label}>{l.children}</ButtonLink>
                         ))}
@@ -72,7 +96,7 @@ const MobileMenu: FC<NavigationProps> = ({links}) => {
 
 export const Navigation: FC<NavigationProps> = ({links}) => {
     const theme = useTheme()
-    const small = useMediaQuery(theme.breakpoints.down('md'))
+    const small = useMediaQuery(theme.breakpoints.down('lg'))
 
     return small ? <MobileMenu links={links}/> : <RegularMenu links={links}/>
 }

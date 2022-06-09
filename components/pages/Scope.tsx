@@ -1,6 +1,7 @@
 import {Box, useTheme} from "@mui/system";
 import {Container, Grid, Stack, Typography, useMediaQuery} from "@mui/material";
 import {FC} from "react";
+import {useTranslation} from "next-i18next";
 
 interface ScopeCardProps {
     i: number
@@ -37,99 +38,93 @@ const ScopeCard: FC<ScopeCardProps> = ({i, title, text}) => {
 }
 
 export const Scope = () => {
+    const {t} = useTranslation()
+
     return (
         <Box pt={'100px'}>
             <Container maxWidth={'xl'}>
                 <Typography variant={'h2'}>
-                    Zakres usług
+                    {t("Zakres usług")}
                 </Typography>
                 <Typography component={'p'} variant={'subtitle1'}>
-                    Oferujemy pełny zakres usług księgowych, oraz kadrowo-płacowych m.in.:
+                    {t("Oferujemy pełny zakres usług księgowych, oraz kadrowo-płacowych")}
                 </Typography>
 
                 <Grid container spacing={'64px'} pt={'64px'} justifyContent={'center'}>
                     <Grid item sm={12} md={6}>
                         <ScopeCard i={1}
-                                   title={'Pełne Księgi Handlowe'}
-                                   text={'Oferujemy obsługę Ksiąg Handlowych dla Spółek oraz innych podmiotów ' +
-                                   'zobowiązanych do pełnej księgowości zgodnie z Ustawą o Rachunkowości.'}
+                                   title={t('Pełne Księgi Handlowe')}
+                                   text={t('Oferujemy obsługę Ksiąg Handlowych dla Spółek oraz innych podmiotów')}
                         />
                     </Grid>
 
                     <Grid item sm={12} md={6}>
                         <ScopeCard i={2}
-                                   title={'Księgi Przychodów i Rozchodów'}
-                                   text={'Oferujemy księgowość  dla mniejszych podmiotów opodatkowanych podatkiem ' +
-                                   'PIT  na zasadach ogólnych lub podatkiem liniowym.'}
+                                   title={t('Księgi Przychodów i Rozchodów')}
+                                   text={t('Oferujemy księgowość  dla mniejszych podmiotów opodatkowanych podatkiem')}
                         />
                     </Grid>
 
                     <Grid item sm={12} md={6}>
                         <ScopeCard i={3}
-                                   title={'Ryczałt'}
-                                   text={'Oferujemy obsługę księgową dla ryczałtowców, ' +
-                                   'opodatkowujących ryczałtowo przychody.'}
+                                   title={t('Ryczałt')}
+                                   text={t('Oferujemy obsługę księgową dla ryczałtowców')}
                         />
                     </Grid>
 
                     <Grid item sm={12} md={6}>
                         <ScopeCard i={4}
-                                   title={'Ewidencja zakupów i sprzedaży'}
-                                   text={'Dla podatników podatku VAT prowadzimy ewidencję zakupów i sprzedaży.'}
+                                   title={t('Ewidencja zakupów i sprzedaży')}
+                                   text={t('Dla podatników podatku VAT prowadzimy ewidencję zakupów i sprzedaży.')}
                         />
                     </Grid>
 
                     <Grid item sm={12} md={6}>
                         <ScopeCard i={5}
-                                   title={'Ewidencja środków trwałych'}
-                                   text={'Oferujemy prowadzenie ewidencji środków trwałych oraz wartości niematerialnych i prawnych.'}
+                                   title={t('Ewidencja środków trwałych')}
+                                   text={t('Oferujemy prowadzenie ewidencji')}
                         />
                     </Grid>
 
                     <Grid item sm={12} md={6}>
                         <ScopeCard i={6}
-                                   title={'Deklaracje podatkowe i sprawozdawcze'}
-                                   text={'Sporządzamy deklaracje PIT, CIT oraz inne wymagane deklaracje podatkowe.'}
+                                   title={t('Deklaracje podatkowe i sprawozdawcze')}
+                                   text={t('Sporządzamy deklaracje PIT, CIT oraz inne wymagane deklaracje podatkowe.')}
                         />
                     </Grid>
 
                     <Grid item sm={12} md={6}>
                         <ScopeCard i={7}
-                                   title={'Sprawozdania finansowe'}
-                                   text={'Dla podatników prowadzących Księgi Handlowe sporządzamy sprawozdania finansowe ' +
-                                   'obejmujące bilans, rachunek zysków i strat, sprawozdanie z przepływów pieniężnych ' +
-                                   'oraz zestawienie zmian w kapitałach własnych'}
+                                   title={t('Sprawozdania finansowe')}
+                                   text={t('Dla podatników prowadzących Księgi Handlowe sporządzamy sprawozdania finansowe')}
                         />
                     </Grid>
 
                     <Grid item sm={12} md={6}>
                         <ScopeCard i={8}
-                                   title={'VAT i JPK oraz Intrastat'}
-                                   text={'Sporządzamy miesięczne rozliczenia zaliczek na podatek, deklaracji VAT oraz pliki JPK'}
+                                   title={t('VAT i JPK oraz Intrastat')}
+                                   text={t('Sporządzamy miesięczne rozliczenia zaliczek na podatek, deklaracji VAT oraz pliki JPK')}
                         />
                     </Grid>
 
                     <Grid item sm={12} md={6}>
                         <ScopeCard i={9}
-                                   title={'Obsługa kadrowo-płacowa'}
-                                   text={'Oferujemy obsługę kadrowo-płacową w zakresie umów o pracę/dzieło/zlecenie, ' +
-                                   'sporządzania list płac. Sporządzamy listy płac, deklaracje ZUS, PFRON.'}
+                                   title={t('Obsługa kadrowo-płacowa')}
+                                   text={t('Oferujemy obsługę kadrowo-płacową w zakresie umów o pracę/dzieło/zlecenie')}
                         />
                     </Grid>
 
                     <Grid item sm={12} md={6}>
                         <ScopeCard i={10}
-                                   title={'Zaliczki i składki'}
-                                   text={'Sporządzamy wyliczenia zaliczek na podatek dochodowy od wynagrodzeń, ' +
-                                   'rozliczamy składki ZUS oraz Pracownicze Plany Kapitałowe'}
+                                   title={t('Zaliczki i składki')}
+                                   text={t('Sporządzamy wyliczenia zaliczek na podatek dochodowy od wynagrodzeń')}
                         />
                     </Grid>
 
                     <Grid item sm={12} md={6}>
                         <ScopeCard i={11}
-                                   title={'Reprezentacja przed US oraz ZUS\n'}
-                                   text={'W imieniu podatnika składamy deklaracje podatkowe, składkowe oraz inne. ' +
-                                   'Reprezentujemy Podatnika w trakcie kontroli podatkowych i ZUS-owskich.'}
+                                   title={t('Reprezentacja przed US oraz ZUS')}
+                                   text={t('W imieniu podatnika składamy deklaracje podatkowe, składkowe oraz inne.')}
                         />
                     </Grid>
                 </Grid>

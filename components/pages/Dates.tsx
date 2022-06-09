@@ -3,6 +3,7 @@ import {greyBackgroundColor} from "../../theme/theme";
 import {Card, Container, Stack, Typography} from "@mui/material";
 import {FC, ReactNode} from "react";
 import {MDXRemote, MDXRemoteSerializeResult} from "next-mdx-remote";
+import {useTranslation} from "next-i18next";
 
 export interface DateEntry {
     day: number
@@ -23,10 +24,12 @@ const li: FC<ParentProps> = ({children}) =>
     <Typography variant={'body2'} component={'li'}>{children}</Typography>
 
 const DateCard: FC<DateEntry> = ({day, content}) => {
+    const {t} = useTranslation()
+
     return (
         <Card sx={{maxWidth: '900px', width: '100%'}} id={day.toString()}>
             <Stack gap={'16px'} m={'32px'}>
-                <Typography variant={'h3'}>{day + ' dzień miesiąca'}</Typography>
+                <Typography variant={'h3'}>{day + ' ' + t('dzień miesiąca')}</Typography>
                 {/*@ts-ignore*/}
                 <MDXRemote {...content} components={{p, li, strong}}/>
             </Stack>
@@ -39,14 +42,16 @@ interface DatesProps {
 }
 
 export const Dates: FC<DatesProps> = ({dates}) => {
+    const {t} = useTranslation()
+
     return (
         <Box bgcolor={greyBackgroundColor} mt={'100px'} pt={'50px'} pb={'50px'}>
             <Container maxWidth={'xl'}>
                 <Typography variant={'h2'}>
-                    Ważne daty
+                    {t("Ważne daty")}
                 </Typography>
                 <Typography component={'p'} variant={'subtitle1'}>
-                    Najważniejsze daty w miesiącu podatkowym
+                    {t("Najważniejsze daty w miesiącu podatkowym")}
                 </Typography>
 
                 <Stack gap={'16px'} pt={'32px'} alignItems={'center'}>

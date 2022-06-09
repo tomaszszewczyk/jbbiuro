@@ -1,7 +1,10 @@
 import {Box} from "@mui/system";
 import {ButtonLink} from "./ButtonLink";
+import {useTranslation} from "next-i18next";
 
 export const SkipLink = () => {
+    const {t} = useTranslation()
+
     return (
         <Box sx={{
             position: 'relative',
@@ -15,7 +18,7 @@ export const SkipLink = () => {
             }
         }}>
             <ButtonLink href={'#main'} tabIndex={0} variant={'contained'}>
-                {'Przejdź do treści'}
+                {t('Przejdź do treści')}
             </ButtonLink>
         </Box>
     )

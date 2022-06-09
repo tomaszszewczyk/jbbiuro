@@ -6,6 +6,7 @@ import iconChart from '../../public/img/icon-chart.svg'
 import iconMoney from '../../public/img/icon-money.svg'
 import {FC} from "react";
 import {greyBackgroundColor} from "../../theme/theme";
+import {useTranslation} from "next-i18next";
 
 interface InfoCardProps {
     icon: any
@@ -29,44 +30,43 @@ const InfoCard: FC<InfoCardProps> = ({icon, iconAlt, title, text}) => {
 }
 
 export const Info = () => {
+    const {t} = useTranslation()
+
     return (
         <Box mt={'100px'} pt={'50px'} pb={'50px'} bgcolor={greyBackgroundColor}>
             <Container maxWidth={'xl'}>
                 <Typography variant={'h2'}>
-                    Informacje o nas
+                    {t("Informacje o nas")}
                 </Typography>
                 <Typography component={'p'} variant={'subtitle1'}>
-                    Przekonaj się, czym wyróżniamy się na tle konkurencji
+                    {t("Przekonaj się, czym wyróżniamy się na tle konkurencji")}
                 </Typography>
 
                 <Stack alignItems={'center'}>
                     <Grid container spacing={'32px'} pt={'48px'} justifyContent={'center'} maxWidth={'900px'}>
                         <Grid item sm={12} md={6}>
                             <InfoCard icon={iconStar}
-                                      iconAlt={'Certyfikat'}
-                                      title={'Certyfikacja'}
-                                      text={'Posiadamy Certyfikat Ministerstwa Finansów numer 8015/98'}/>
+                                      iconAlt={t('Certyfikat')}
+                                      title={t('Certyfikacja')}
+                                      text={t('Posiadamy Certyfikat Ministerstwa Finansów numer 8015/98')}/>
                         </Grid>
                         <Grid item sm={12} md={6}>
                             <InfoCard icon={iconMoney}
-                                      iconAlt={'Ubezpieczenie'}
-                                      title={'Pełne ubezpieczenie'}
-                                      text={'Jako biuro rachunkowe ponosimy pełną odpowiedzialność, ' +
-                                      'dlatego posiadamy ubezpieczenie od odpowiedzialności cywilnej.\n'}/>
+                                      iconAlt={t('Ubezpieczenie')}
+                                      title={t('Pełne ubezpieczenie')}
+                                      text={t('Jako biuro rachunkowe ponosimy pełną odpowiedzialność')}/>
                         </Grid>
                         <Grid item sm={12} md={6}>
                             <InfoCard icon={iconChart}
-                                      iconAlt={'Komputer z wykresem'}
-                                      title={'Najlepsze oprogramowanie'}
-                                      text={'Korzystamy z systemu Comarch ERP Optima. Dzięki temu otrzymujesz ' +
-                                      'między innymi zdalny dostęp do Twojej księgowości w każdej chwili.'}/>
+                                      iconAlt={t('Komputer z wykresem')}
+                                      title={t('Najlepsze oprogramowanie')}
+                                      text={t('Korzystamy z systemu Comarch ERP Optima')}/>
                         </Grid>
                         <Grid item sm={12} md={6}>
                             <InfoCard icon={iconState}
-                                      iconAlt={'Profesjonalizm'}
-                                      title={'Udokumentowany profesjonalizm'}
-                                      text={'Każdy z pracowników naszego biura posiada wieloletnie doświadczenie ' +
-                                      'na stanowisku księgowym oraz wyższe wykształcenie.'}/>
+                                      iconAlt={t('Profesjonalizm')}
+                                      title={t('Udokumentowany profesjonalizm')}
+                                      text={t('Każdy z pracowników naszego biura posiada wieloletnie doświadczenie')}/>
                         </Grid>
                     </Grid>
                 </Stack>

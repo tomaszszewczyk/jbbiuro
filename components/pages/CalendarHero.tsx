@@ -1,19 +1,24 @@
 import {Container, Stack, Typography, useMediaQuery} from "@mui/material";
 import {Box, useTheme} from "@mui/system";
 import {Calendar} from "../calendar/Calendar";
+import {useTranslation} from "next-i18next";
 
 const Slogan = () => {
+    const {t} = useTranslation()
+
     return (
         <Typography variant={'h1'}>
-            Kalendarz
+            {t("Kalendarz")}
         </Typography>
     )
 }
 
 const Comment = () => {
+    const {t} = useTranslation()
+
     return (
         <Typography component={'p'} variant={'subtitle1'}>
-            Przegląd ważnych dat w rachunkowości
+            {t("Przegląd ważnych dat w rachunkowości")}
         </Typography>
     )
 }

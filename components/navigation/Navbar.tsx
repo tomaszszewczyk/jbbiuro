@@ -4,22 +4,26 @@ import logo from "../../public/img/logo.png";
 import {Navigation} from "./Navigation";
 import {Container} from "@mui/material";
 import {Box} from "@mui/system";
+import {useTranslation} from "next-i18next";
 
 export const Navbar = () => {
+    const {t} = useTranslation()
+
     return (
         <Box>
             <Container maxWidth={'xl'}>
                 <Stack direction={'row'} justifyContent={'space-between'} pt={'32px'} pb={'32px'} alignItems={'center'}>
                     <Box maxWidth={'196px'}>
-                        <ImageLink label={'Przejdź na stronę główną'}
+                        <ImageLink label={t('Przejdź na stronę główną')}
                                    src={logo}
-                                   alt={'Logo Biuro Rachunkowe Joanna Bączar'}
+                                   alt={t('Logo Biuro Rachunkowe Joanna Bączar')}
                                    url={'/'}/>
                     </Box>
                     <Navigation links={[
-                        {href: '/aktualnosci', children: 'Aktualności', label: 'Zobacz aktualności'},
-                        {href: '/kalendarz', children: 'Kalendarz', label: 'Zobacz kalendarz'},
-                        {href: '/kontakt', children: 'Kontakt', variant: 'contained'},
+                        {href: '/login', children: t('Panel klienta'), label: t('Zaloguj się do panelu klienta')},
+                        {href: '/aktualnosci', children: t('Aktualności'), label: t('Zobacz aktualności')},
+                        {href: '/kalendarz', children: t('Kalendarz'), label: t('Zobacz kalendarz')},
+                        {href: '/kontakt', children: t('Kontakt'), variant: 'contained'},
                     ]}/>
                 </Stack>
             </Container>
