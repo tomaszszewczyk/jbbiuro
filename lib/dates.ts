@@ -3,8 +3,8 @@ import fs from "fs";
 import matter from "gray-matter";
 import {serialize} from "next-mdx-remote/serialize";
 
-export const getDates = async () => {
-    const datesDir = join(process.cwd(), 'dates')
+export const getDates = async (locale: string = 'pl') => {
+    const datesDir = join(process.cwd(), 'dates', locale)
     const dates = await Promise.all(fs.readdirSync(datesDir).map(async d => {
         const datePath = join(datesDir, d)
         const fileContents = fs.readFileSync(datePath, 'utf8')
