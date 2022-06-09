@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: jbbiuro-pod
-          image: ghcr.io/tomaszszewczyk/jbbiuro:v0.0.7
+          image: ghcr.io/tomaszszewczyk/jbbiuro:v0.0.8
           imagePullPolicy: Always
           ports:
             - containerPort: 3000

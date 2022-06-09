@@ -9,13 +9,16 @@ import {Blog, BlogEntry} from "../components/pages/Blog";
 import {Footer} from "../components/pages/Footer";
 import {getNews} from "../lib/news";
 import {ContactHero} from "../components/pages/ContactHero";
-import {Button, FormControl, Input, InputLabel, Stack} from "@mui/material";
+import {Alert, Button, FormControl, Input, InputLabel, Snackbar, Stack, Typography} from "@mui/material";
 import {serverSideTranslations} from "next-i18next/serverSideTranslations";
 import {useTranslation} from "next-i18next";
+import {useState} from "react";
+import {set} from "lodash";
 
 
 const LoginForm = () => {
     const {t} = useTranslation()
+    const [clicked, setClicked] = useState(false)
 
     return (
         <Stack id='contact-form' gap={'32px'} component={'form'} width={'400px'}>
@@ -29,7 +32,9 @@ const LoginForm = () => {
                 <Input id="message-input" aria-describedby='message-input-label'/>
             </FormControl>
 
-            <Button id="send-form" variant={'contained'}>{t('Zaloguj')}</Button>
+            {clicked && <Alert severity="error">{t("Nieprawidłowy login lub hasło")}</Alert> }
+
+            <Button id="send-form" variant={'contained'} onClick={() => setClicked(true)}>{t('Zaloguj')}</Button>
         </Stack>
     )
 }
